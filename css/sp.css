@@ -1,0 +1,673 @@
+/* --------------------------------------------sanpham---------------------------------------- */
+.sanpham{
+    padding: 100px 0 0;
+    margin: 0 150px 0 160px;
+}
+.sanpham-top{
+    margin-bottom: 50px;
+}
+.sanpham-top p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 12px;
+    font-size: 12px;
+}
+.sanpham-left{
+    width: 10%;
+}
+/* .sanpham-left p{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+} 
+.sanpham-left ul{
+    text-align: center;
+    padding: 0;
+}
+.sanpham-left ul p{
+    margin-bottom: 50px;
+    color: deeppink;
+    font-size: 18px;
+}
+.sanpham-left ul li{
+    margin-left: 0;
+    margin: 25px;
+    padding: 8px 8px;
+    background: chartreuse;
+    text-align: center;
+} */
+.sanpham-left ul li:hover{
+    background: fuchsia;
+}
+.sanpham-right{
+    width: 80%;
+	height: auto;
+	margin-bottom: 30px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.sanpham-right-top-item:first-child{
+    flex: 2;
+    font-size: 16px;
+    font-weight: bold;
+}
+.sanpham-right-top-item{
+    flex: 1;
+    padding: 0 12px;
+}
+.sanpham-right-top-item button{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid thistle;
+    cursor: pointer;
+}
+.sanpham-right-top-item select{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid thistle;
+    cursor: pointer;
+}
+.sanpham-right-content{
+    margin: 20px;
+    justify-content: flex-start;
+}
+.sanpham-right-content-item{
+    width :calc(25% - 20px);
+	margin: 0 10px;                    /*khoang cach giua cac san pham*/
+    text-align: center;
+    padding: 15px 0;
+	position: relative;
+}
+.sanpham-right-content h1{
+    font-size: 14px;
+    margin: 15px 0 10px;
+    color: black;
+}
+.sanpham-right-content-item img{
+    width: 100%;
+	padding: 20px 20px;
+	border: 1px solid rgb(211, 208, 208);
+}
+.sanpham-right-content-item h3{
+	text-align: center;
+	height: 30px;
+}
+/* buttonchitiet */
+
+.butct:hover{
+	background-color: slategrey;
+	color: white;
+	opacity: 1;
+}
+.butct{
+	border: none;
+	width: 60%;
+	height: 60px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 40px;
+	cursor: pointer;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	transition: 0.3s;
+	opacity: 0;
+}
+/* ------------------page */
+.sanpham-right-bottom{
+	width: 100%;
+	margin: 20px 0 50px;
+}
+#page{
+	display: flex;
+	justify-content: center;
+	height: 40px;
+}
+#page .pagenumber a{
+	display: block;
+	height: 35px;
+	width: 35px;
+	background-color: slategray;
+	border: 3px solid slategray;
+	text-align: center;
+	line-height: 26px;
+	color:whitesmoke;
+	margin:  5px;
+}
+#page .pagenumber a:hover{
+	background-color: #ccc;
+	border: solid 3px #ccc;
+	color: darkred;
+}
+/* chitietsanpham */
+.wrap{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    display: none;
+    z-index: 10;
+	background:rgba(0,0,0,0.6);
+}
+#chitiet{
+	height: 500px;
+	width: 900px;
+	border: slategray solid 3px;
+	background-color: #fff;
+	margin: 130px auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 50px 20px 20px;
+	position: relative;
+	z-index: 20;
+	box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+#chitiet .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 40px;
+	background-color: transparent;
+	cursor: pointer;
+    border: none;
+}
+#chitiet .close:hover{
+	color: rosybrown;
+}
+#chitiet .left{
+	width: 50%;
+	height: 100%;
+	align-items: center;
+	align-self: center;
+}
+#chitiet .left #imgbig{
+	width: 60%;
+    margin-left: 100px;
+}
+#chitiet .right{
+	height: 100%;
+	width: 50%;
+}
+#chitiet .right #tensp{
+	margin-top: 20px;
+	font-size: 25px;
+}
+
+#chitiet .right #giasp{
+	font-size: 35px;
+	margin: 30px 0 30px;
+}
+#chitiet .right #size{
+	font-size: 16pt;
+	padding: 5px 30px;
+	border: 2px solid black;
+	margin: 10px 0 20px;
+}
+#chitiet .right #soluong{
+	font-size: 15px;
+	width: 80px;
+	height: 40px;
+	padding: 5px;
+	border: 2px solid black;
+	margin: 10px 0 50px;
+	text-align: center;
+}
+#chitiet .right .giamsoluong{
+	display: inline-block;
+	font-size: 15px;
+	color: slategray;
+	width: 40px;
+	height: 40px;
+	border: 2px solid black;
+	border-right: none;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+#chitiet .right .tangsoluong{
+	display: inline-block;
+	font-size: 15px;
+	color: slategray;
+	width: 40px;
+	height: 40px;
+	border: 2px solid black;
+	border-left: none;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+#chitiet .right .tangsoluong:active ,#chitiet .right .giamsoluong:active{
+	background-color:cadetblue;
+	color: #fff;
+}
+#chitiet .right .themvaogio{
+	display: block;
+	cursor: pointer;
+	font-size: 25px;
+	padding: 10px 30px;
+	background-color: slategray;
+	border: slategray solid 2px;
+	color: aliceblue;
+}
+#chitiet .right .themvaogio:hover{
+	background-color: teal;
+	color: white;
+	border: 2px solid teal;
+}
+/*Search*/
+
+#container{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 150px;
+	z-index: 10;
+	background-color: white;
+	display: none;
+	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+#container .close{
+	position: absolute;
+	top: -16px;
+	right: 2px;
+	font-size: 50px;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+#container .close:hover{
+  color: #41678e;
+}
+  #container .searchbox input{
+	  margin-top: 20px;
+	  height: 50px;
+	  width: 60%;
+	  font-size: 30px;
+	  border: 3px solid slategray;
+	
+  }
+  .searchbox input {
+	padding: 0;
+	margin: 0;
+	width: 0px;
+	font-size: 18px;
+	font-weight: 600;
+  }
+   
+  .searchbox input::placeholder {
+	color: #ccc;
+  }
+  /* #timtheotheloai{
+	  margin: 0px 0px;
+	  background-color: tan;
+	  padding: 0px 0px;
+  } */
+  #timtheotheloai select{
+	  height: 40px;
+	  width: 120px;
+	  margin-top: 0px;
+	  padding: 10px;
+	  margin-top: 20px;
+  }
+  #container .searchbox{
+	  height: 70px;
+	  width: 800px;
+	  display: inline;
+	  margin-top: 20px;
+	  padding: 15px;
+	  margin-left: 250px;
+  }
+  .box .theloai_gia{
+	  margin-top: 0;
+	  height: 80px;
+	  width: 60%;
+	  margin-left: 265px;
+	  background-color: white;
+  }
+  
+  .nhapgia input{
+	  height: 40px;
+	  width: 250px;
+	  margin-top:  20px;
+	  border: 3px solid slategray;
+	  font-size: 18px;
+	
+  }
+  .nhapgia button{
+	height: 40px;
+	width: 150px;
+	margin-top:  20px;
+	margin-left: 20px;
+	border: 3px solid slategray;
+	cursor: pointer;
+	background-color: slategray;
+	font-size: 15px;
+	font-weight: bold;
+	color: floralwhite;
+  }
+  .nhapgia button:hover{
+	  background-color: slategray;
+	  border: 3px solid slategray;
+	  margin-top: 18px;
+	  margin-right: 2px;
+	  height: 45px;
+	  width: 155px;
+  }
+  .nhapgia p{
+	  margin: 28px 10px;
+  }
+
+  /* endsearch */
+  /* CART */
+  .cart{
+	padding: 100px 0;;
+}
+.cart-top-wrap{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cart-top{
+	height: 2px;
+	width: 70%;
+	background-color: #ddd;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 50px 0 100px;
+}
+.cart-top-item{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+}
+.cart-top-item i{
+	color: #ddd;
+}
+.cart-top-cart{
+	border: 1px solid #0db7ea;
+}
+.cart-top-cart i{
+	color: #0db7ea;
+}
+.cart-content{
+	width: 90%;
+	margin-left: 90px;
+}
+.cart-content-left{
+	flex: 2;
+	padding-right: 12px;
+}
+.cart-content-left table{
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+.cart-content-left table th{
+	padding: 10px 0;
+}
+.cart-content-left table th{
+	/* padding-bottom: 30px; */
+	margin: 0;
+	background-color: slategray;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #333;
+	height: 30px;
+	line-height: 30px;
+	/* border-collapse: collapse; */
+	/* border-bottom: 3px solid rgb(189, 14, 116); */
+}
+.cart-content-left table p{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  flex-wrap: wrap;
+  color: #333;
+}
+.cart-content-left table input{
+  width: 30px;
+}
+.cart-content-left table span{
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+.cart-content-left table img{
+	width: 80px;
+} 
+.cart-content-left table td{
+	padding: 20px 10px;
+	border-bottom: 3px solid slategray;
+}
+
+.cart-content-left #showgiohang td{
+	border-bottom: solid 1px slategray;
+}
+.cart-content-right{
+	flex: 1;
+	padding-left: 12px;
+	
+}
+
+.cart-content-right table{
+	width: 100%;
+	border-collapse: collapse;
+}
+.cart-content-right table th{
+  padding: 10px 0;
+}
+.cart-content-right table th{
+	padding-bottom: 30px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 12px;
+	color: #333;
+	/* border-collapse: collapse; */
+	/* border-bottom: 2px solid #ddd; */
+}
+.cart-content-right table td{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+  padding: 20px 0;
+  border-bottom: 2px #ccc solid;
+  border-top: #ccc 2px solid;
+}
+#showgiohang button{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-color: slategray;
+	cursor: pointer;
+}
+#showgiohang button:hover{
+	background-color: #ccc;
+}
+#showgiohang .giohangtrong {
+	font-size: 20px;
+	color: darkorange;
+}
+.cart-content-right-button-item{
+	width: 170px;
+	padding: 15px 15px;
+	margin: 25px;
+	background-color: slategray;
+	cursor: pointer;
+	color: white;
+	border: none;
+}
+.show_bill{
+	margin: 130px 150px 300px;
+	width: 80%;
+	height: auto;
+	border: #CCC 2px solid;
+}
+.cart-content-right-button-item:hover{
+	background-color: #ccc;
+	color: snow;
+}
+.show_bill #bill{
+	display: none;
+	padding: 30px;
+	
+}
+.show_bill #bill p{
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(4, 128, 0);
+	text-align: center;
+	margin-top: 0;
+	text-shadow: 2px 2px 2px mintcream;
+}
+#bill .billcontent{
+	padding: 20px;
+	width: 100%;
+	margin: 20px 0;
+	/* border-radius: 30px; */
+	display: flex;
+	flex-wrap: wrap;
+	background-color: rgb(193, 236, 222);
+} 
+#bill .billcontent div:nth-child(1){
+	width: 40%;
+	text-align: left;
+}
+#bill .billcontent div{
+	width: 20%;
+	text-align: center;
+} 
+#bill .billcontent #status{
+	color: #ff4700;
+}
+/* gioithieu */
+.gioithieu{
+	margin: 200px;
+}
+.gioithieu h1{
+	font-weight: 400; 
+	font-size: 30px;
+}
+.content-gioithieu li{
+	margin: 25px;
+	font-size: 20px;
+}
+.map-text{
+	justify-content: space-around;
+	padding: 20px 10px;
+}
+.text-item{
+	justify-self: center;
+}
+.text-item p{
+	margin: 30px 0px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.text-item p a{
+	color: rgb(80, 65, 218);
+}
+/* lienhe */
+.banner-lienhe img{
+	width: 100%;
+	margin-top: 80px;
+	height: 400px;
+}
+.lienhe{
+	width: 80%;
+	margin-top: 100px;
+	margin-left: 150px;
+	text-align: center;
+	z-index: 20;
+}
+.lienhe .lienhe-top{
+	margin: 20px auto;
+	
+}
+.lienhe .lienhe-top h1{
+	color: darkblue;
+	font-size: 30px;
+	margin: 20px;
+}
+.lienhe .lienhe-top p{
+	font-size: large;
+	margin: 15px auto;
+}
+.lienhe .lienhe-mid-item{
+	margin-top: 50px;
+	justify-content: space-around;
+}
+.lienhe-mid-item-small{
+	align-items: flex-start;
+	justify-content: space-around;
+}
+.lienhe-mid-item-small img{
+	margin-right: 20px;
+}
+.lienhe-mid-item-small h1{
+	text-align: left;
+	font-size: 25px;
+	color: darkblue;
+}
+.lienhe-mid-item-small p{
+	margin: 10px auto;
+	font-size: 15px;
+	text-align: left;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.sendmessage .text-send-message p{
+	font-size: 20px;
+	margin-top: 50px;
+	text-align: center;
+}
+.sendmessage .text-send-message h1{
+	color: darkblue;
+	font-size: 30px;
+}
+.nhaptenemail-sendmessage input{
+	height: 40px;
+	width: 430px;
+	margin: 20px 10px;
+	border-radius: 2px;
+	border: 2px solid #ccc;
+	font-size: 18px;
+}
+.nhaptinnhan-sendmessage{
+	display: block;
+
+}
+.nhaptinnhan-sendmessage textarea{
+	width: 885px;
+	height: 200px;
+	border-radius: 2px;
+	border: 2px solid #ccc;
+	font-size: 18px;
+}
+.nhaptinnhan-sendmessage button{
+	margin-left: -763px;
+	height: 40px;
+	width: 120px;
+	border: none;
+	background-color: darkblue;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.sendmessage-map{
+	margin: 30px auto;
+}

@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 50px;
+    height: 80px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background:rgba(255, 255, 255, 0.3);
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+header.sticky{
+    background: rgba(255, 255, 255, 1);
+}
+header:hover{
+    background: rgba(255, 255, 255, 1);
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.logo{
+    flex: 1;
+    margin-bottom: 20px;
+}
+.menu{
+    flex: 5;
+    display: flex;
+}
+.menu li{
+    padding: 0 12px;
+  
+}
+
+.menu li a{
+    font-size: 17px;
+    font-weight: bold;
+}
+.menu li a:hover{
+    color: goldenrod;
+}
+.others{
+    flex: 2;
+    display: flex;
+    padding-right: 0;
+    justify-content: flex-end;
+}
+.others li{
+    padding: 0 12px;
+    position: relative;
+}
+.others li:nth-child(3) i:hover{
+    color: turquoise;
+    cursor: pointer;
+}
+#sub-giohang{
+    position: absolute;
+    width: 100px;
+    display: none;
+    font-weight: bold;
+    font-size: 15px;
+    right: -50px;
+    background-color: white;
+}
+.others li:nth-child(3):hover #sub-giohang{
+    display: block;
+    
+}
+#sub-giohang li a{
+    line-height: 30px;
+}
+#sub-giohang li a:hover{
+    color: aqua;
+}
+#sub-giohang li::after{
+    display: none;
+}
+
+.others li:nth-child(2) button{
+    border: none;
+    font-size: 16px;
+}
+.others li:nth-child(2) button i{
+    cursor: pointer;
+}
+.others li:nth-child(2) button i:hover{
+    color: turquoise;
+}
+.others li:nth-child(1) i:hover{
+    color: turquoise;
+}
+.others li:nth-child(4) i:hover{
+    cursor: pointer;
+    color: turquoise;
+}
+.others li button{
+    background-color: transparent;
+}
+.others li span{
+    padding-right: 10px;
+    font-weight: bold;
+    color: rgb(42, 64, 88);
+}
+.others li::after{
+    content:"";
+    display: block;
+    width: 1px;
+    height: 80%;    
+    background: #CCC;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.others li:last-child::after{
+    display: none;
+}
+.others li:first-child{
+    position: relative;
+}
+.others li:first-child i{
+    position: absolute;
+    right: 11px;
+    cursor: pointer;
+}
+#slider{
+    padding-bottom: 30px;
+    overflow: hidden;
+    width: 100%;
+} 
+.aspect-ratio-169 {
+    display: block;
+    position: relative;
+    padding-top: 30%;
+    transition: 0.3s;
+  }
+  .aspect-ratio-169 img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+
+  }
+  .dot-container{
+      position: absolute;
+      height: 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+  }
+  .dot{
+      height: 16px;
+      width: 16px;
+      background-color: #CCC;
+      border-radius: 50%;
+      margin-right: 12px;
+      cursor: pointer;
+  }
+  .dot.active{
+      background-color: #333;
+  }  
+/* --------------------------------------app---------------------------------------------- */
+.app-container{
+    text-align: center;
+    align-items: center;
+    padding: 100px 0 20px 0;
+}
+.app-google{
+    margin: 30px;
+}
+.app-google img{
+    height: 50px;
+    cursor: pointer;
+}
+.app-container p{
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color: black;
+    font-weight: bold;
+}
+.app-container input{
+    margin: 50px;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+    width: 400px;
+    text-align: center;
+    outline: none;
+}
+/* --------------------------------------footer---------------------------------------------- */
+
+.footer{
+    padding: 50px 50px 150px;
+    background: #000;
+}
+.footer__heading{
+    font-size: 17px;
+    text-transform: uppercase;
+    color: aliceblue;
+}
+.footer-item__link{
+    color: slategrey;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+}
+.footer-item__link:hover{
+    color: darkorange;
+}
+.footer-item__icon{
+    font-size: 1.6rem;
+    margin: -1px 8px 0px 0 ;
+}
+ul{
+    padding: 20px 0px;
+}
+.grid__row {
+    justify-content: space-between;
+}
+.footer__download{
+    margin: 20px 0;
+    display: flex;
+}
+.footer__download-qr{
+    width: 100px;
+}
+.footer__download-app{
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer__download-app-img{
+    height: 30px;
+}
+.footer__download-app-link{
+    color: transparent;
+    text-decoration: none;
+}
+.footer-item #email-footer{
+    margin-top: 20px;
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+}
+.footer-item #sendemail{
+    height: 30px;
+    width: 80px;
+    margin-top: 10px;
+    border: none;
+    background-color: slategray;
+    cursor: pointer;
+    font-weight: bold;
+}
+.footer-item #sendemail:hover{
+    background-color: gray;
+}
+

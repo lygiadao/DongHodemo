@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/iconclock.jpg">
+    <title>LOVETIME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sp.css">
+    <link rel="stylesheet" href="css/signlog.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <script>
+        window.onload = function()
+        {
+            // taomenu();
+            //theloai();
+            theloaimenu();
+            hienthitopmenu();
+            taosanpham();
+            hienthisanpham();
+            checklogin();
+
+        }
+    </script>
+    <header id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="image/logo.png" style="height: 80%; width: 80%; margin-top: 12px;"></a>
+        </div>
+        <div class="menu" id="topmn">
+            <!-- topmn -->
+        </div>
+        <div class="others" onchange="checklogin()">
+            <li><i onclick="showSearch()" class="fas fa-search"></i></li>
+            <li><button onclick="showform()"><span></span><i class="fas fa-user"></i></button></li>
+            <li><a href="giohang.html"><i class="fas fa-shopping-cart"></i></a>
+                <ul id="sub-giohang">
+                    <li><a href="giohang.html">Giỏ hàng</a></li>
+                    <li><a href="donhang.html">Đơn hàng</a></li>
+
+                </ul>
+            </li>
+            <li onclick="logout()"><i class="fas fa-sign-out-alt"></i></li>
+        </div>
+    </header>
+    <!-- Search -->
+    <div id="container">
+        <div class="box">
+            <div class="close" onClick="closeSearch()">+</div>
+            <div class="searchbox">
+                <input type="text" placeholder="Tìm kiếm..." id="search" oninput="search()">
+            </div>
+            <div>
+                <form onsubmit="searchPrice(event)" class="theloai_gia row">
+                    <div id="timtheotheloai">
+                         <select id="timkiemtheloai" onchange="search()">
+                            <option value="all" selected>Tất cả</option>
+                            <option value="rolex">Rolex</option>
+                            <option value="versace">Versace</option>
+                            <option value="hublot">Hublot</option>
+                            <option value="tissot">Tissot</option>
+                        </select>
+                     </div>
+                      <div class="nhapgia row"><p>Giá từ</p><input type="number" min="0" id="min"><p>Đến</p><input type="number" min="0" id="max"><button type="submit">Tìm kiếm</button></div>
+                 </form>
+            </div>  
+          </div>
+      
+      </div>
+    </header>
+      <!---------------------------------------------- slider-------------------------------------- -->
+      <section id="slider">
+        <div class="aspect-ratio-169">
+             <img src="image/slider1.jpg">
+             <img src="image/slider2.jpg">
+             <img src="image/slider3.jpg">
+              <img src="image/slider4.jpg">
+             <img src="image/slider5.jpg">
+         </div>
+         <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+     <!-- ---------------------------login------------------------------------------- -->
+     <div id="loginwrap">
+        <form id="loginform" onsubmit="return ktdangnhap();">
+            <div id="wrapperlogin" style="position: absolute; left: 32%;top: 20%; display: block">
+                <div style="width: 100%; height: 40px; padding-left: 25px; padding-top: 18px; position: relative; text-align: left">
+                     <div class="closeform" onclick="closeform();">X</div>
+                </div>
+                <div id="contentlogin">
+                    <div id="content-midlogin">
+                        <label for="usernamelogin">Tên đăng nhập</label>
+                        <input type="text" id="usernamelogin" value="">
+                       <br>
+                       <br>
+                        <label for="passlogin">Mật khẩu</label>
+                        <input type="password" value="" id="passlogin">
+                     
+                    </div>
+                </div>
+                <div class="bottomlogin">
+                    <input type="submit" value="ĐĂNG NHẬP" >
+                    <p style="text-align: center"><span>Chưa có tài khoản</span><a style="color: darkturquoise;" href="#" onclick="showsignup();"> Đăng ký tại đây</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ----------------------------signin---------------------------------------- -->
+    <div id="signupwrap">
+        <form  id="signupform" onsubmit="return ktdangky();">
+            <div id="wrapper" style="position: absolute; left: 32%;top: 20%; display: block">
+                <div style="width: 100%; height: 40px; padding-left: 25px; padding-top: 18px; position: relative; text-align: left">
+                     <div class="closeform" onclick="closeformsignup();">X</div>
+                </div>
+                <div id="content">
+                    <div id="content-mid">
+                        <label for="usernamesignup">Tên đăng nhập</label>
+                        <input type="text" id="usernamesignup" value="">
+                        <label for="emailsignup">Email</label>
+                        <input type="email" id="emailsignup" value="">
+                        <label for="phonesignup">Số điện thoại</label>
+                        <input type="text" id="phonesignup" value="">
+                        <label for="passsignup">Mật khẩu</label>
+                        <input type="password" value="" id="passsignup">
+                        <label for="repasssignup">Nhập lại mật khẩu</label>
+                        <input type="password" value="" id="repasssignup">
+                    </div>
+                </div>
+                <div class="bottom">
+                    <input type="submit" value="ĐĂNG KÝ" >
+
+                    <p style="text-align: center"><span>Trở về trang </span><a style="color: darkturquoise;" href="#" onclick="showlogin();"> Đăng nhập</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+     <!----------------------------- sanpham-------------------------------------- -->
+     <section class="sanpham" id="sp">
+
+         <div class="container">
+             <div class="row">
+                <div class="sanpham-left" id="sanpham-leftmenu">
+                    <!-- theloaimenu -->
+                </div>
+                <div class="sanpham-right row">
+                    <div class="sanpham-right-top-item">
+                        <!-- <p>Đồng hồ mới nhất</p> -->
+                    </div>
+                   
+                     <div class="sanpham-right-content row" id="hienthisp">
+                          <!-- sanpham -->   
+                    </div>
+
+                         <div id="chitietsp" class="wrap">
+                            <div id="chitiet">
+                                <button type="button" class="close" onClick="closechitiet()">x</button>
+                                <div class="left">
+                                    <img id="imgbig" src="">
+                                </div>
+                                <div class="right">
+                                    <h3 id="tentl"></h3>
+                                    <h2 id="tensp"></h2>
+                                    <h4 id="giasp"></h4>
+                                    <h4>Số lượng</h4>
+                                    <button class="giamsoluong" onClick="giamsoluong()">-</button><input type="text" id="soluong" value="1"><button class="tangsoluong" onClick="tangsoluong()">+</button>
+                                    <button class="themvaogio" onclick="themvaogio()">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    <div class="sanpham-right-bottom">
+                        <div id="page"></div>
+                    </div>
+                </div>
+                
+             </div>
+         </div>
+
+     </section>
+   
+     <!---------------------------------------------- footer-------------------------------------- -->
+     <footer class="footer">
+         <div class="grid">
+             <div class="grid__row row">
+                 <div class="grid__column-2-4">
+                     <b class="footer__heading">CHĂM SÓC KHÁCH HÀNG</b>
+                     <ul class="footer-list">
+                         <li class="footer-item">
+                             <a href="" class="footer-item__link">An Dương Vương, phường 3, quận 5, TP Hồ Chí Minh</a>
+                         </li>
+                         <li class="footer-item">
+                            <a href="" class="footer-item__link">Điện thoại: 0973 880 661</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Email: daoly0053@gmail.com</a>
+                        </li>
+                         <li class="footer-item">
+                            <a href="" class="footer-item__link">LOVETIME-Shop Mall</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
+                        </li>
+
+                     </ul>
+                 </div>
+                 <div class="grid__column-2-4">
+                    <b class="footer__heading">GIỚI THIỆU</b>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="gioithieu.html" class="footer-item__link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                           <a href="" class="footer-item__link">Tuyển dụng</a>
+                       </li>
+                       <li class="footer-item">
+                           <a href="" class="footer-item__link">Điều khoản</a>
+                       </li>
+                       <li class="footer-item">
+                        <a href="lienhe.html" class="footer-item__link">Liên hệ</a>
+                    </li>
+
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <b class="footer__heading">DỊCH VỤ & HỖ TRỢ</b>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">An toàn mua bán</a>
+                        </li>
+                        <li class="footer-item">
+                           <a href="" class="footer-item__link">Đăng ký cộng tác viên</a>
+                       </li>
+                       <li class="footer-item">
+                           <a href="" class="footer-item__link">Câu hỏi thường gặp</a>
+                       </li>
+
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <b class="footer__heading">THEO DÕI</b>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-instagram-square"></i>
+                                 Instagram
+                           </a>
+                       </li>
+                       <li class="footer-item">
+                           <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-youtube"></i>
+                                Youtube
+                           </a>
+                       </li>
+
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <b class="footer__heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</b>
+                    <div class="footer__download">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROSbo2XtLk9qgeYUwQpuCMaRpsVBXBz68gSg&usqp=CAU" alt="Download QR" class="footer__download-qr">
+                        <div class="footer__download-app">
+                            <a href="" class="footer__download-app-link">
+                                <img src="https://www.cirse.org/wp-content/uploads/2018/10/1280px-Download_on_the_App_Store_Badge.svg-300x89.png" alt="Google play" class="footer__download-app-img"> 
+                            </a>
+                            <a href="" class="footer__download-app-link">
+                                <img src="https://www.cirse.org/wp-content/uploads/2018/10/1000px-Get_it_on_Google_play.svg-300x88.png" alt="App store" class="footer__download-app-img">
+                            </a>
+                        </div>
+                    </div>
+                    <li class="footer-item">
+                        <input id="email-footer" type="email" placeholder="Email của bạn">
+                    </li>
+                    <li class="footer-item">
+                        <button id="sendemail" >Gửi</button>
+                    </li>
+
+                </div>
+             </div>
+         </div>
+        
+     </footer>
+</body>
+<script src="js/slider.js"></script>
+</html>

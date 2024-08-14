@@ -1,0 +1,190 @@
+/* signup */
+@keyframes example{
+    from{top: 0px;}
+    to {top: 80px;}
+}
+#signupwrap{
+    height: 900px;
+	width: 100%;
+	background:rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	display: none;
+	z-index:20;
+	overflow-y: auto;
+}
+#wrapper{
+    width: 400px;
+    margin-left: 80px;
+    height: 550px;
+    background-color: white;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    border-top-left-radius: 15px ;
+    border-top-right-radius: 15px;
+    border-radius: 15px;
+    display: block;
+    z-index: 30;
+  
+}
+#content{
+    background-color: white;
+    height: 300px;
+}
+#content-mid{
+    width: 400px;
+    height: 400px;
+    float: left;
+    background-color: white;
+    padding-left: 20px;
+
+}
+
+#content input[type=text]{
+    height:40px ;
+    border-radius: 10px;
+    size: 40;
+    border: black solid 2px;
+    width: 300px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+#content input[type=email]{
+    height:40px ;
+    border-radius: 10px;
+    size: 40;
+    border: black solid 2px;
+    width: 300px;
+   margin-left: 30px;
+   margin-bottom: 20px;
+   
+}
+#content input[type=password]{
+    height: 40px;
+    border-radius: 10px;
+    size: 40;
+    border: black solid 2px;
+    width: 300px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+#content label{
+   margin-left: 30px;
+}
+#bottom p{
+    margin: 0px;
+    margin: 10px;
+}
+.bottom input{
+    color: white;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    margin: 15px 130px;
+    font-weight: bold;
+}
+.bottom input:hover{
+    background-color: slategray;
+}
+ .closeform{
+    position: absolute;
+    font-size: 18x;
+    top: 10px;
+    right: 15px;
+    background-color: white;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    padding: 4px 0;
+}
+.closeform:hover{
+    background-color: teal;
+}
+/* login */
+@keyframes examplelogin{
+    from{top: 0px;}
+    to {top: 140px;}
+}
+#loginwrap{
+    height: 100%;
+	width: 100%;
+    background:rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	display: none;
+	z-index: 20;
+	overflow-y: auto;
+}
+#wrapperlogin{
+    width: 500px;
+    margin: auto;
+    height: 350px;
+    background-color: white;
+    animation-name: examplelogin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    border-top-left-radius: 15px ;
+    border-top-right-radius: 15px;
+    border-radius: 15px;
+    display: block;
+    z-index: 30;
+}
+#contentlogin{
+    background-color:white;
+    height: 180px;
+}
+#content-midlogin{
+    width: 400px;
+    height: 190px;
+    float: left;
+    background-color: white;
+    padding-left: 20px;
+    padding: 30px 20px;
+
+}
+
+#contentlogin input[type=text]{
+    height:40px ;
+    border-radius: 10px;
+    size: 40;
+    border: black solid 2px;
+    width: 300px;
+   margin-left: 80px;
+}
+#contentlogin input[type=password]{
+    height: 40px;
+    border-radius: 10px;
+    size: 40;
+    border: black solid 2px;
+    width: 300px;
+    margin-left: 80px;
+    margin-bottom: 30px;
+}
+
+#contentlogin label{
+   margin-left:80px;
+}
+#bottomlogin p{
+    margin: 0px;
+    margin: 10px;
+}
+.bottomlogin input{
+    color: white;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    margin:15px 175px;
+    font-weight: bold;
+
+}
+.bottomlogin input:hover{
+    background-color: slategray;
+}

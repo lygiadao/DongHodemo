@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/iconclock.jpg">
+    <title>LOVETIME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sp.css">
+    <link rel="stylesheet" href="css/signlog.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <script>
+        window.onload = function()
+        {
+            // taomenu();
+            theloaimenu();
+            hienthitopmenu();
+            checklogin();
+
+        }
+    </script>
+    <header id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="image/logo.png" style="height: 80%; width: 80%; margin-top: 12px;"></a>
+        </div>
+        <div class="menu" id="topmn">
+            <!-- topmn -->
+        </div>
+        <div class="others" onchange="checklogin()">
+            <li><i onclick="showSearch()" class="fas fa-search"></i></li>
+            <li><button onclick="showform()"><span></span><i class="fas fa-user"></i></button></li>
+            <li><a href="giohang.html"><i class="fas fa-shopping-cart"></i></a>
+                <ul id="sub-giohang">
+                    <li><a href="giohang.html">Giỏ hàng</a></li>
+                    <li><a href="donhang.html">Đơn hàng</a></li>
+
+                </ul>
+            </li>
+            <li onclick="logout()"><i class="fas fa-sign-out-alt"></i></li>
+        </div>
+    </header>
+    <!-- Search -->
+    <div id="container">
+        <div class="box">
+            <div class="close" onClick="closeSearch()">+</div>
+            <div class="searchbox">
+                <input type="text" placeholder="Tìm kiếm..." id="search" oninput="search()">
+            </div>
+            <div>
+                <form onsubmit="searchPrice(event)" class="theloai_gia row">
+                    <div id="timtheotheloai">
+                         <select id="timkiemtheloai" onchange="search()">
+                            <option value="all" selected>Tất cả</option>
+                            <option value="rolex">Rolex</option>
+                            <option value="versace">Versace</option>
+                            <option value="hublot">Hublot</option>
+                            <option value="tissot">Tissot</option>
+                        </select>
+                     </div>
+                      <div class="nhapgia row"><p>Giá từ</p><input type="number" min="0" id="min"><p>Đến</p><input type="number" min="0" id="max"><button type="submit">Tìm kiếm</button></div>
+                 </form>
+            </div>  
+          </div>
+      
+      </div>
+    </header>
+     <!-- ---------------------------login------------------------------------------- -->
+     <div id="loginwrap">
+        <form id="loginform" onsubmit="return ktdangnhap();">
+            <div id="wrapperlogin" style="position: absolute; left: 32%;top: 20%; display: block">
+                <div style="width: 100%; height: 40px; padding-left: 25px; padding-top: 18px; position: relative; text-align: left">
+                     <div class="closeform" onclick="closeform();">X</div>
+                </div>
+                <div id="contentlogin">
+                    <div id="content-midlogin">
+                        <label for="usernamelogin">Tên đăng nhập</label>
+                        <input type="text" id="usernamelogin" value="">
+                       <br>
+                       <br>
+                        <label for="passlogin">Mật khẩu</label>
+                        <input type="password" value="" id="passlogin">
+                     
+                    </div>
+                </div>
+                <div class="bottomlogin">
+                    <input type="submit" value="ĐĂNG NHẬP" >
+                    <p style="text-align: center"><span>Chưa có tài khoản</span><a style="color: darkturquoise;" href="#" onclick="showsignup();"> Đăng ký tại đây</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ----------------------------signin---------------------------------------- -->
+    <div id="signupwrap">
+        <form  id="signupform" onsubmit="return ktdangky();">
+            <div id="wrapper" style="position: absolute; left: 32%;top: 20%; display: block">
+                <div style="width: 100%; height: 40px; padding-left: 25px; padding-top: 18px; position: relative; text-align: left">
+                     <div class="closeform" onclick="closeformsignup();">X</div>
+                </div>
+                <div id="content">
+                    <div id="content-mid">
+                        <label for="usernamesignup">Tên đăng nhập</label>
+                        <input type="text" id="usernamesignup" value="">
+                        <label for="emailsignup">Email</label>
+                        <input type="email" id="emailsignup" value="">
+                        <label for="phonesignup">Số điện thoại</label>
+                        <input type="text" id="phonesignup" value="">
+                        <label for="passsignup">Mật khẩu</label>
+                        <input type="password" value="" id="passsignup">
+                        <label for="repasssignup">Nhập lại mật khẩu</label>
+                        <input type="password" value="" id="repasssignup">
+                    </div>
+                </div>
+                <div class="bottom">
+                    <input type="submit" value="ĐĂNG KÝ" >
+
+                    <p style="text-align: center"><span>Trở về trang </span><a style="color: darkturquoise;" href="#" onclick="showlogin();"> Đăng nhập</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+  
+     <!----------------------------- giothieu-------------------------------------- -->
+    <section class="gioithieu">
+        <div>
+            <h1>100% SẢN XUẤT TẠI THUỴ SỸ</h1>
+        </div>
+        <div class="content-gioithieu">
+            <ul>
+                <li>Hầu hết những thương hiệu đồng hồ được nhập khẩu và cung ứng tại LOVETIME đều được sản xuất 100% từ các thương hiệu lớn, uy tín tại Thụy Sỹ.</li>
+                <li>Để đảm bảo chất lượng của những chiếc đồng hồ được sản xuất bởi đất nước mình,Thuỵ Sĩ có hẳn một bộ luật quy định rõ ràng về việc một cỗ máy thời gian phải đáp ứng được những tiêu chí như thế nào thì mới được mang trên mình cái mác danh giá “Swiss Made”.</li>
+                <li>Điều này quý khách sẽ được chuyên viên tư vấn giải thích rõ ràng về những tiêu chí, những chi tiết đặc trưng của một chiếc đồng hồ được gọi Swiss Made.</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Nơi mua sắm đáng tin cậy</h1>
+        </div>
+        <div class="content-gioithieu">
+            <ul>
+                <li>LOVETIME là công ty nhập khẩu và cung ứng đồng hồ và trang sức với hơn 7 năm kinh nghiệm trên thị trường.</li>
+                <li>Hiện nay, chúng tôi cung cấp trên 40 nhãn hiệu đồng hồ danh tiếng trên thế giới như: Patek Philippe, Rolex, Omega, Hublot, Tag Heuer, Longines, Cartier, Chopard, Frederique Constant, Tissot, Movado, Gucci, Versace, Michael Kors, ... </li>
+                <li>Tự hào là nhà bán lẻ đồng hồ có uy tín trên thị trường Việt, đã được hơn 30.000 khách hàng chọn đặt niềm tin, LOVETIME luôn không ngừng hoàn thiện và phát triển qua từng năm với sự am hiểu thị trường, và khả năng đáp ứng nhu cầu thị hiếu của khách hàng.</li>
+            </ul>
+        </div>
+        <div>
+            <h1>NGUỒN GỐC SẢN PHẨM RÕ RÀNG:</h1>
+        </div>
+        <div class="content-gioithieu">
+            <ul>
+                <li>Tất cả các sản phẩm do LOVETIME cung cấp đều có nguồn gốc xuất xứ rõ ràng, được nhập khẩu từ các nhà bán lẻ, phân phối lớn, chính hãng của Mỹ và châu Âu.</li>
+                <li>Tất cả những sản phẩm đến tay khách hàng đều là sản phẩm mới, chính hãng nguyên hộp, catalog, thẻ bảo hành, sổ hướng dẫn sử dụng và bất cứ phụ kiện nào do hãng cung cấp cho các dòng đồng hồ đó.</li>
+                <li>Toàn bộ các sản phẩm đều được bảo hành toàn cầu, theo quy ước của Hãng.</li>
+            </ul>
+        </div>
+        <div>
+            <h1>ĐƯỢC COI LÀ WEBSITE ĐỒNG HỒ, CỔNG THÔNG TIN VỀ ĐỒNG HỒ LỚN NHẤT VIỆT NAM VỚI ĐA DẠNG MẪU MÃ, HÌNH ẢNH:</h1>
+        </div>
+        <div class="content-gioithieu">
+            <ul>
+                <li>Website với hơn 120 ngàn sản phẩm, luôn được cập nhật hằng ngày của gần như tất cả các thương hiệu đồng hồ lớn, và danh tiếng nhất trên thế giới.</li>
+                <li>Đặc biệt, đối với những mẫu đồng hồ không có sẵn tại showroom, website hoặc những mẫu yêu thích mà quý khách đang tìm kiếm, hãy gọi trực tiếp đến nhân viên tư vấn của chúng tôi.</li>
+                <li>Đây là một trong những khía cạnh khiến Likewatch luôn là một doanh nghiệp đáng tin cậy và linh hoạt trong mắt khách hàng khi luôn sẵn sàng đáp ứng mọi nhu cầu của khách hàng về sản phẩm. Với kinh nghiệm và sự nhiệt tình, đội ngũ tư vấn sẽ hồi đáp nhanh nhất thông tin về sản phẩm quý khách đang cần.</li>
+            </ul>
+        </div>
+        <div>
+            <h1>CHI NHÁNH SỬA CHỮA</h1>
+        </div>
+        <div class="map-text row">
+            <div id="map-item" style="width:600px;height:450px">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.669726937899!2d106.68006961458889!3d10.759917092332728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTw6BpIEfDsm4!5e0!3m2!1svi!2s!4v1640877030960!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+            <div class="text-item">
+                    <p>LOVETIME-shop Mall</p>
+                    <p>An Dương Vương, phường 3, quận 5, TP Hồ Chí Minh<p>
+                    <p><a href="">Điện thoại: 0973 880 661</a></p>
+            </div>
+        </div>
+
+    </section>
+   
+     <!---------------------------------------------- footer-------------------------------------- -->
+     <footer class="footer">
+         <div class="grid">
+             <div class="grid__row row">
+                 <div class="grid__column-2-4">
+                     <b class="footer__heading">CHĂM SÓC KHÁCH HÀNG</b>
+                     <ul class="footer-list">
+                         <li class="footer-item">
+                             <a href="" class="footer-item__link">An Dương Vương, phường 3, quận 5, TP Hồ Chí Minh</a>
+                         </li>
+                         <li class="footer-item">
+                            <a href="" class="footer-item__link">Điện thoại: 0973 880 661</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Email: daoly0053@gmail.com</a>
+                        </li>
+                         <li class="footer-item">
+                            <a href="" class="footer-item__link">LOVETIME-Shop Mall</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
+                        </li>
+
+                     </ul>
+                 </div>
+                 <div class="grid__column-2-4">
+                    <b class="footer__heading">GIỚI THIỆU</b>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="#" class="footer-item__link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                           <a href="" class="footer-item__link">Tuyển dụng</a>
+                       </li>
+                       <li class="footer-item">
+                           <a href="" class="footer-item__link">Điều khoản</a>
+                       </li>
+                       <li class="footer-item">
+                        <a href="lienhe.html" class="footer-item__link">Liên hệ</a>
+                    </li>
+
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <b class="footer__heading">DỊCH VỤ & HỖ TRỢ</b>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">An toàn mua bán</a>
+                        </li>
+                        <li class="footer-item">
+                           <a href="" class="footer-item__link">Đăng ký cộng tác viên</a>
+                       </li>
+                       <li class="footer-item">
+                           <a href="" class="footer-item__link">Câu hỏi thường gặp</a>
+                       </li>
+
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <b class="footer__heading">THEO DÕI</b>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-instagram-square"></i>
+                                 Instagram
+                           </a>
+                       </li>
+                       <li class="footer-item">
+                           <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-youtube"></i>
+                                Youtube
+                           </a>
+                       </li>
+
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <b class="footer__heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</b>
+                    <div class="footer__download">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROSbo2XtLk9qgeYUwQpuCMaRpsVBXBz68gSg&usqp=CAU" alt="Download QR" class="footer__download-qr">
+                        <div class="footer__download-app">
+                            <a href="" class="footer__download-app-link">
+                                <img src="https://www.cirse.org/wp-content/uploads/2018/10/1280px-Download_on_the_App_Store_Badge.svg-300x89.png" alt="Google play" class="footer__download-app-img"> 
+                            </a>
+                            <a href="" class="footer__download-app-link">
+                                <img src="https://www.cirse.org/wp-content/uploads/2018/10/1000px-Get_it_on_Google_play.svg-300x88.png" alt="App store" class="footer__download-app-img">
+                            </a>
+                        </div>
+                    </div>
+                    <li class="footer-item">
+                        <input id="email-footer" type="email" placeholder="Email của bạn">
+                    </li>
+                    <li class="footer-item">
+                        <button id="sendemail" >Gửi</button>
+                    </li>
+
+                </div>
+             </div>
+         </div>
+        
+     </footer>
+</body>
+</html>
